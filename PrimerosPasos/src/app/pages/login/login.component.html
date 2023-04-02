@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="bootstrap-wrapper">
+  <mat-card>
+    <mat-card-content>
+      <h1>LOGIN</h1>
+      <mat-form-field class="full-with" appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input required matInput placeholder="Ingrese usuario..."
+        />
+        <mat-hint>Debe se un usuario válido</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="full-with" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" required matInput placeholder="Ingrese contraseña..."
+        />
+      </mat-form-field>
+
+      <div class="container text-center">
+        <button mat-raised-button color="primary" type="submit">Login</button>
+        <button type="button" style="margin-left: 20px;" mat-raised-button color="accent">Limpiar</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
