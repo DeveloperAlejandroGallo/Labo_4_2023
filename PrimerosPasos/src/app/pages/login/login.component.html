@@ -1,24 +1,71 @@
-<div class="bootstrap-wrapper">
-  <mat-card>
-    <mat-card-content>
-      <h1>LOGIN</h1>
-      <mat-form-field class="full-with" appearance="outline">
-        <mat-label>Usuario</mat-label>
-        <input required matInput placeholder="Ingrese usuario..."
-        />
-        <mat-hint>Debe se un usuario válido</mat-hint>
+
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar><img mat-card-image src="../../../assets/login.png" class="circular"></div>
+    <mat-card-title>
+      Inicio de Sesión
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form class="form-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Correo Electrónico</mat-label>
+        <input matInput [(ngModel)]="email" name="email" required email />
       </mat-form-field>
 
-      <mat-form-field class="full-with" appearance="outline">
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [(ngModel)]="password" name="password" type="password" required />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" (click)="login()" [disabled]="!email || !password || isLoggedIn">
+        {{ isLoggedIn ? 'Ingresando...' : 'Ingresar' }}
+      </button>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button routerLink="/signup">Crear cuenta</button>
+    <!-- <button mat-raised-button (click)="showMsg('MSG RECIBIDO OK')">mostrar msg</button> -->
+  </mat-card-actions>
+</mat-card>
+
+<!-- <div class="login-container">
+  <div class="login-card">
+    <img src="../../../assets/login.png" alt="Logo" class="logo">
+    <h1 class="title">Login</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" formControlName="email" type="email" >
+        <mat-error *ngIf="formControls['email'].hasError('email') && !formControls['email'].hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="formControls['email'].hasError('required')">
+          Email is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
-        <input type="password" required matInput placeholder="Ingrese contraseña..."
-        />
+        <input matInput name="password" formControlName="password" type="password" >
+        <mat-error *ngIf="formControls['password'].hasError('minlength')">
+          Password must be at least 6 characters
+        </mat-error>
+        <mat-error *ngIf="formControls['password'].hasError('required')">
+          Password is required
+        </mat-error>
       </mat-form-field>
 
-      <div class="container text-center">
-        <button mat-raised-button color="primary" type="submit">Login</button>
-        <button type="button" style="margin-left: 20px;" mat-raised-button color="accent">Limpiar</button>
-      </div>
-    </mat-card-content>
-  </mat-card>
+      <button mat-raised-button color="primary" [disabled]="loading" class="submit-button" type="submit">
+        <span *ngIf="!loading">Login</span>
+
+      </button>
+
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </form>
+  </div>
 </div>
+ -->

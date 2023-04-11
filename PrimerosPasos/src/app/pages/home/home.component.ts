@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { NotifierComponent } from 'src/app/notifier/notifier.component';
 
 
 @Component({
@@ -8,6 +9,16 @@ import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  /**
+   *
+   */
+  constructor(
+    // private notification: NotifierComponent
+    ) {
+
+  }
+
   title: string = 'Primeros Pasos';
   variableInput: string = "";
   rutaImg: string = "";
@@ -34,5 +45,9 @@ export class HomeComponent {
     this.promedio = 0;
     this.edadUno = 0;
     this.edadDos = 0;
+  }
+
+  showMsg(msg:string){
+    // this.notification.Success(msg);
   }
 }

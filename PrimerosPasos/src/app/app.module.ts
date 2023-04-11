@@ -50,7 +50,9 @@ import { ErrorComponent } from './pages/error/error.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+//Toastr
+import {ToastrModule} from 'ngx-toastr';
+import { NotifierComponent } from './notifier/notifier.component';
 
 
 @NgModule({
@@ -59,7 +61,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     HomeComponent,
     ErrorComponent,
-    SignupComponent
+    SignupComponent,
+    NotifierComponent
   ],
   imports: [
     AppRoutingModule,
@@ -86,7 +89,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

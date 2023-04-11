@@ -1,4 +1,4 @@
-.bootstrap-wrapper {
+/* .bootstrap-wrapper {
   padding: 4rem 1rem;
 }
 
@@ -7,9 +7,94 @@ mat-card{
     margin: 2rem auto;
     text-align: center;
     height: 350px;
-}
+} */
 
-.full-with{
+/* .full-with{
   width: 100%
 }
 
+#logo {
+  width: 100px;
+}
+
+.bootstrap-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-card-header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+/* .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+} */
+
+
+/* new */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  width: 100%;
+}
+
+mat-card {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
