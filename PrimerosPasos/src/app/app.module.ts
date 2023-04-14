@@ -44,15 +44,14 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { LoginComponent } from './pages/login/login.component';
+
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//Toastr
-import {ToastrModule} from 'ngx-toastr';
-import { NotifierComponent } from './notifier/notifier.component';
+import { LoginComponent } from './pages/login/login.component';
+import { NavVarComponent } from './nav-var/nav-var.component';
 
 
 @NgModule({
@@ -62,7 +61,7 @@ import { NotifierComponent } from './notifier/notifier.component';
     HomeComponent,
     ErrorComponent,
     SignupComponent,
-    NotifierComponent
+    NavVarComponent
   ],
   imports: [
     AppRoutingModule,
@@ -89,10 +88,7 @@ import { NotifierComponent } from './notifier/notifier.component';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    BrowserAnimationsModule,
-    ToastrModule.forRoot({
-
-    })
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

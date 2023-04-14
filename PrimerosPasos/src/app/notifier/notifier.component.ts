@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+// import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-notifier',
@@ -8,7 +8,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NotifierComponent implements OnInit {
 
-  constructor(private notifier: ToastrService) {
+  constructor(
+    // private notifier: ToastrService
+    ) {
 
   }
 
@@ -16,16 +18,16 @@ export class NotifierComponent implements OnInit {
 
   }
 
-  Success(msg: string){
-    this.notifier.success(msg);
-  }
+  // Success(msg: string){
+  //   this.notifier.success(msg);
+  // }
 
-  Warning(msg: string){
-    this.notifier.warning(msg);
-  }
+  // Warning(msg: string){
+  //   this.notifier.warning(msg);
+  // }
 
-  Error(msg: string){
-    this.notifier.error(msg);
-  }
+  // Error(msg: string){
+  //   this.notifier.error(msg);
+  // }
 
 }

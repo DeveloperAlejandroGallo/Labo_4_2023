@@ -1,71 +1,56 @@
-
-<mat-card>
-  <mat-card-header>
-    <div mat-card-avatar><img mat-card-image src="../../../assets/login.png" class="circular"></div>
-    <mat-card-title>
-      Inicio de Sesión
-    </mat-card-title>
-  </mat-card-header>
-
-  <mat-card-content>
-    <form class="form-container">
-      <mat-form-field appearance="fill">
-        <mat-label>Correo Electrónico</mat-label>
-        <input matInput [(ngModel)]="email" name="email" required email />
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Contraseña</mat-label>
-        <input matInput [(ngModel)]="password" name="password" type="password" required />
-      </mat-form-field>
-
-      <button mat-raised-button color="primary" type="submit" (click)="login()" [disabled]="!email || !password || isLoggedIn">
-        {{ isLoggedIn ? 'Ingresando...' : 'Ingresar' }}
-      </button>
-    </form>
-  </mat-card-content>
-
-  <mat-card-actions>
-    <button mat-raised-button routerLink="/signup">Crear cuenta</button>
-    <!-- <button mat-raised-button (click)="showMsg('MSG RECIBIDO OK')">mostrar msg</button> -->
-  </mat-card-actions>
-</mat-card>
-
-<!-- <div class="login-container">
-  <div class="login-card">
-    <img src="../../../assets/login.png" alt="Logo" class="logo">
-    <h1 class="title">Login</h1>
-
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput name="email" formControlName="email" type="email" >
-        <mat-error *ngIf="formControls['email'].hasError('email') && !formControls['email'].hasError('required')">
-          Please enter a valid email address
-        </mat-error>
-        <mat-error *ngIf="formControls['email'].hasError('required')">
-          Email is required
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput name="password" formControlName="password" type="password" >
-        <mat-error *ngIf="formControls['password'].hasError('minlength')">
-          Password must be at least 6 characters
-        </mat-error>
-        <mat-error *ngIf="formControls['password'].hasError('required')">
-          Password is required
-        </mat-error>
-      </mat-form-field>
-
-      <button mat-raised-button color="primary" [disabled]="loading" class="submit-button" type="submit">
-        <span *ngIf="!loading">Login</span>
-
-      </button>
-
-      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-    </form>
+<div class="container">
+  <div class="login-wrap">
+    <div class="login-html">
+      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+      <div class="login-form">
+        <div class="sign-in-htm">
+          <div class="group">
+            <label for="user" class="label">Username</label>
+            <input id="user" type="text" class="input">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Password</label>
+            <input id="pass" type="password" class="input" data-type="password">
+          </div>
+          <div class="group">
+            <input id="check" type="checkbox" class="check" checked>
+            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+          </div>
+          <div class="group">
+            <input type="submit" class="button" value="Sign In">
+          </div>
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <a href="#forgot">Forgot Password?</a>
+          </div>
+        </div>
+        <div class="sign-up-htm">
+          <div class="group">
+            <label for="user" class="label">Username</label>
+            <input id="user" type="text" class="input">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Password</label>
+            <input id="pass" type="password" class="input" data-type="password">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Repeat Password</label>
+            <input id="pass" type="password" class="input" data-type="password">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Email Address</label>
+            <input id="pass" type="text" class="input">
+          </div>
+          <div class="group">
+            <input type="submit" class="button" value="Sign Up">
+          </div>
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <label for="tab-1">Already Member?</label>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
- -->
