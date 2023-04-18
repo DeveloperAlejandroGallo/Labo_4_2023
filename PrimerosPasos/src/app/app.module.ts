@@ -14,14 +14,15 @@ import { HttpClientModule } from '@angular/common/http'
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
-//Formularios 
+//Formularios
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'; //para el datepicker
-// para poder trabajar con los formatos de fechas => 
+import { MatCardModule } from '@angular/material/card'
+// para poder trabajar con los formatos de fechas =>
 // npm install moment --save
 // npm i @angular/material-moment-adapter@14.2.7
 import { MomentDateModule } from '@angular/material-moment-adapter';
@@ -43,13 +44,16 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { LoginComponent } from './pages/login/login.component';
+
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { LoginComponent } from './pages/login/login.component';
+import { NavVarComponent } from './nav-var/nav-var.component';
 
+import Toastify from 'toastify-js'; // Importar Toastify
 
 
 @NgModule({
@@ -58,7 +62,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     HomeComponent,
     ErrorComponent,
-    SignupComponent
+    SignupComponent,
+    NavVarComponent
   ],
   imports: [
     AppRoutingModule,
@@ -80,6 +85,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatDialogModule,
     MatGridListModule,
+    MatCardModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

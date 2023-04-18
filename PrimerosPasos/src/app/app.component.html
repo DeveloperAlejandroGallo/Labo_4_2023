@@ -1,27 +1,3 @@
-
-
-<div class="container">
-    <h1>Bienvenido a la app {{title}}</h1>
-    <div class="row" style="margin: 20px;">
-        <div class="col-md-6 offset-md-3">
-            
-            <h2>Ingrese 2 edades:</h2>
-            <br>
-            <label>Edad 1</label> 
-            <input type="number" [(ngModel)]="edadUno" />
-            <br>
-            <label>Edad 2</label> 
-            <input type="number" [(ngModel)]="edadDos" />
-            <br><br>
-            <button mat-raised-button color="primary" (click)="Calcular()">Calcular</button>
-            <br><br>
-            <label>Suma</label> 
-            <input type="number" [(ngModel)]="suma" />
-            <br>
-            <label>Promedio</label> 
-            <input type="number" [(ngModel)]="promedio" />
-        </div>
-    </div>
-</div>
-
-<!-- <img [src]="rutaImg"> -->
+<app-nav-var></app-nav-var>
+<router-outlet></router-outlet>
+<!-- <app-notifier></app-notifier> -->
