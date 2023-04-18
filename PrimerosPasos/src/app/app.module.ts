@@ -53,6 +53,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
 import { NavVarComponent } from './nav-var/nav-var.component';
 
+import Toastify from 'toastify-js'; // Importar Toastify
+
 
 @NgModule({
   declarations: [

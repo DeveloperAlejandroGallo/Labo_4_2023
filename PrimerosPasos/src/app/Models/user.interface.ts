@@ -1,16 +1,16 @@
 export type Rol = 'SUSCRIPTOR' | 'ADMIN'
 
-export interface User {
+export class User {
     name: string;
     password: string;
 
     /**
      *
      */
-    // constructor(_name:string, _pass:string) {
-    //     this.name=_name;
-    //     this.password = _pass;
-    // }
+    constructor(_name:string, _pass:string) {
+        this.name=_name;
+        this.password = _pass;
+    }
 }
 
 export interface UserResponse {
