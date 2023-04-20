@@ -18,8 +18,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatButtonModule} from '@angular/material/button';
+import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'; //para el datepicker
 import { MatCardModule } from '@angular/material/card'
 // para poder trabajar con los formatos de fechas =>
@@ -39,11 +39,10 @@ import { MatGridListModule }  from '@angular/material/grid-list';
 
 import {  }  from '@angular/material/';
 
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+// import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+// import { provideAuth,getAuth } from '@angular/fire/auth';
+// import { provideDatabase,getDatabase } from '@angular/fire/database';
+// import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
@@ -53,7 +52,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
 import { NavVarComponent } from './nav-var/nav-var.component';
 
-import Toastify from 'toastify-js'; // Importar Toastify
+// Firebase services + environment module
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import { AuthService } from './services/auth-service.service';
+import { ToastMsgService } from './services/toast-msg.service';
+
+
 
 
 @NgModule({
@@ -86,13 +95,14 @@ import Toastify from 'toastify-js'; // Importar Toastify
     MatDialogModule,
     MatGridListModule,
     MatCardModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthService, ToastMsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

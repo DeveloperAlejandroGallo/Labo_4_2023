@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.interface';
-import Toastify from 'toastify-js'
-// import "toastify-js/src/toastify.css"
+import { ToastMsgService } from 'src/app/services/toast-msg.service';
+
 
 @Component({
   selector: 'app-login',
@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit{
   user!: User;
 
   constructor(
+      public message: ToastMsgService,
       private formBuilder: FormBuilder,
       private router: Router  ) { }
 
@@ -44,35 +45,20 @@ export class LoginComponent implements OnInit{
 
     if(usrBD != null)
     {
-      Toastify({
-        text: "El usuario ya se encuentra registrado",
-        position: "center",
-        className: "error",
-      }).showToast();
+      this.message.Warning("El usuario ya se encuentra registrado");
       return;
     }
 
     if(password != this.signUpForm.get('passwordRep')?.value)
     {
-      Toastify({
-        text: "Las contraseñas son distintas ",
-        position: "center",
-        className: "error",
-      }).showToast();
+      this.message.Error("Las contraseñas son distintas ");
       return;
     }
 
     this.user = new User(email, password);
 
     localStorage.setItem(email, JSON.stringify(this.user));
-    Toastify({
-      text: "Usuario dado de alta correctamente",
-      position: "center",
-      className: "info",
-      // style: {
-      //   background: "linear-gradient(to right, #00b09b, #96c93d)",
-      // }
-    }).showToast();
+    this.message.Info("Usuario dado de alta correctamente");
 
   }
 
@@ -83,20 +69,12 @@ export class LoginComponent implements OnInit{
     let usrBD: User = this.getUser(email);
     if (usrBD == null || usrBD.name != email || usrBD.password != password)
     {
-      Toastify({
-        text: "Usuario o contraseña erroneos",
-        className: "error",
-        position: "center",
-      }).showToast();
+      this.message.Error("Usuario o contraseña erroneos");
       return;
     }
 
 
-    Toastify({
-      text: "Bienvenido " + usrBD.name,
-      className: "info",
-      position: "center",
-    }).showToast();
+    this.message.Info("Bienvenido " + usrBD.name);
 
     this.router.navigate(['/home']);
   }
