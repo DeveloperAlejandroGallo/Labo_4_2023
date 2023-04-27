@@ -46,7 +46,7 @@ import {  }  from '@angular/material/';
 
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { SignupComponent } from './pages/signup/signup.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from './pages/login/login.component';
@@ -65,13 +65,13 @@ import { ToastMsgService } from './services/toast-msg.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
     ErrorComponent,
-    SignupComponent,
     NavVarComponent
   ],
   imports: [
